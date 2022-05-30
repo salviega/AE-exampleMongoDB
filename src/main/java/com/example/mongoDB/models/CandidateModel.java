@@ -4,17 +4,24 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "candidate")
+@Document(collation = "candidates")
 public class CandidateModel {
 
     @Id
     private String id;
     private String name;
-    private double exp;
+    private Double exp;
 
     @Indexed(unique = true)
     private String email;
 
+    public CandidateModel() {}
+
+    public CandidateModel(String name, Double exp, String email) {
+        this.name = name;
+        this.exp = exp;
+        this.email = email;
+    }
 
     public String getId() {
         return id;

@@ -3,14 +3,16 @@ package com.example.mongoDB.services;
 import com.example.mongoDB.models.CandidateModel;
 import com.example.mongoDB.repositories.ICandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CandidateService {
 
-    @Autowired
+    @Autowired()
     ICandidateRepository candidateRepository;
 
     public List<CandidateModel> getAllCandidates() {

@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/candidates")
 public class CandidateController {
 
-    @Autowired
+    @Autowired()
     private CandidateService candidateService;
 
     @GetMapping()
